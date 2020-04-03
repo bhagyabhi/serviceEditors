@@ -8,6 +8,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { GraphicsEditorComponent } from './graphics-editor/graphics-editor.component';
 import { TagListComponent } from './tag-list/tag-list.component';
 import { ServiceEditorComponent } from './service-editor/service-editor.component';
+import { ColumnOneComponent } from './column-one/column-one.component';
 
 
 const routes: Routes=[
@@ -22,7 +23,8 @@ const routes: Routes=[
     AppComponent,
     GraphicsEditorComponent,
     TagListComponent,
-    ServiceEditorComponent
+    ServiceEditorComponent,
+    ColumnOneComponent
   ],
   imports: [
     BrowserModule,

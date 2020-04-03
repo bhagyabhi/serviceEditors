@@ -12,3 +12,10 @@
     position: absolute;
     right: 6px;
 }
+.service-list{
+    margin-top:10px;
+}
+.service-list-item{
+    list-style-type:none;
+    font-size:20px;
+}
