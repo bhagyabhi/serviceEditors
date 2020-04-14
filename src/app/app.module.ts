@@ -4,12 +4,14 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { Routes, RouterModule } from '@angular/router';
-
+import { FormsModule } from '@angular/forms';
 import { GraphicsEditorComponent } from './graphics-editor/graphics-editor.component';
 import { TagListComponent } from './tag-list/tag-list.component';
 import { ServiceEditorComponent } from './service-editor/service-editor.component';
 import { ColumnOneComponent } from './column-one/column-one.component';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {CdkTreeModule} from '@angular/cdk/tree';
+import {MatTreeModule, MatIconModule, MatButtonModule} from '@angular/material';
 
 const routes: Routes=[
   {path:"graphics",component:GraphicsEditorComponent},
@@ -29,7 +31,13 @@ const routes: Routes=[
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    BrowserAnimationsModule,
+    CdkTreeModule,
+    FormsModule,
+    MatTreeModule,
+    MatIconModule,
+    MatButtonModule
     ],
   providers: [],
   bootstrap: [AppComponent]

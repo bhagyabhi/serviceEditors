@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, ViewChildren } from '@angular/core';
+import {ColumnOneComponent} from './column-one/column-one.component';
+import { SharedEventsService } from './services/shared-events.service';
 
 @Component({
   selector: 'app-root',
@@ -6,9 +8,19 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  @ViewChildren(ColumnOneComponent) ColumnOneComponent: ColumnOneComponent;
   navbarOpen = false;
 
+  constructor(private sharedEventsService: SharedEventsService) {}
+
 toggleNavbar() {
-  this.navbarOpen = !this.navbarOpen;
+  this.navbarOpen = true;
 }
+saveEffects() {
+
+  this.sharedEventsService.emitSaveChangesEvent();
+
+}
+
+
 }

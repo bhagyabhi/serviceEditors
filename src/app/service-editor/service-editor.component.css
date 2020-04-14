@@ -19,3 +19,8 @@
     list-style-type:none;
     font-size:20px;
 }
+
+.verticalLine {
+    height: 125vh;
+    border-left: 1px solid;
+}

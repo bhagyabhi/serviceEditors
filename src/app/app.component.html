@@ -24,7 +24,7 @@
           </ul>
           <ul class="navbar-nav navbar-right">
             <li><a href="#"><span class="fa fa-trash fa-lg"></span></a></li>
-            <li><a href="#"><span class="fa fa-floppy-o fa-lg"></span></a></li>
+            <li (click)="saveEffects()"><a ><span class="fa fa-floppy-o fa-lg"></span></a></li>
             <li><a href="#"><span class="fa fa-refresh fa-lg"></span></a></li>
             <li><a href="#"><span class="fa fa-eye fa-lg"></span></a></li>
           </ul>
@@ -34,6 +34,6 @@
   </div>
 </div>
 
-<div class="container">
+<div>
   <router-outlet></router-outlet>
 </div>
