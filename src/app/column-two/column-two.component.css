@@ -25,65 +25,7 @@
     margin-top: 42px;
 }
 
-.addEffect-name {
-    font-size: 19px;
-    padding-left: 7px;
-    font-weight: 400;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
-.addEffect-description {
-    height: 14px;
-    padding-left: 7px;
-    font-size: 17px;
-}
-
-.addEffect-type-wrapper {
-    margin-top: 25px;
-    height: 64px;
-    background-color: #ada3a3c4;
-    margin-left: 9px;
-    margin-right: 9px;
-}
-
 .addEffect-type {
-    height: 14px;
-    padding-left: 7px;
-    font-size: 17px;
-}
-
-.addEffect-logic {
-    margin-top: 5px;
-    background-color: #ada3a3c4;
-    padding: 5px 0 5px 2px;
-    font-size: larger;
-    width: 57px;
-    text-align: center;
-}
-
-.interlogic-name {
-    font-size: 19px;
-    padding-left: 7px;
-    font-weight: 400;
-}
-
-.interlogic-description {
-    height: 14px;
-    padding-left: 7px;
-    font-size: 17px;
-}
-
-.interlogic-type-wrapper {
-    margin-top: 25px;
-    height: 64px;
-    background-color: #ada3a3c4;
-    margin-left: 9px;
-    margin-right: 9px;
-}
-
-.interlogic-type-text {
     height: 14px;
     padding-left: 7px;
     font-size: 17px;
@@ -129,14 +71,6 @@ select {
 input {
     width: 93%;
     margin-left: 7px;
-}
-
-.column-one-section {
-    display: flex;
-}
-
-#first-column-wrapper {
-    margin-right: 45px;
 }
 
 .material-icons-padding {

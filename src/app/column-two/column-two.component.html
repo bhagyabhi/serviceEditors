@@ -1,0 +1,81 @@
+<div class="row" id="second-coulumn-wrapper">
+    <div class="flex">
+        <div class="rectangle">
+            <div class="addEffect addEffect-style">
+                <div class="form-group">
+
+                    <select [(ngModel)]="addInterLogicObj.effectName" class="form-control" #effect (change)='getEffectChange(effect.value)'>
+          <option *ngFor="let value of effectNames" [ngValue]="value">{{value}}</option>
+        </select>
+
+
+                    <input type="text" [(ngModel)]="addInterLogicObj.effectDescription" placeholder="Description" />
+                    <select [(ngModel)]="addInterLogicObj.effectType">
+          <option *ngFor="let value of effectTypes" [ngValue]="value">{{value}}</option>
+        </select>
+                    <select id="cars" [(ngModel)]="addInterLogicObj.effectResetLi">
+
+        </select>
+                </div>
+            </div>
+
+        </div>
+        <div class="arrow"></div>
+        <div class="arrowIcon"></div>
+    </div>
+
+
+    <div class="flex margin-top">
+        <div class="rectangle">
+            <div class="addEffect addEffect-style">
+                <div>
+                    <div>Interlock Logic 1</div>
+                    <select [(ngModel)]="interLogic.logic1" class="form-control">
+          <option *ngFor="let value of logics" [ngValue]="value">{{value}}</option>
+        </select>
+                </div>
+
+                <div [hidden]="!showLogic2">
+                    <div>Interlock Logic 2</div>
+                    <select [(ngModel)]="interLogic.logic2" class="form-control">
+          <option *ngFor="let value of logics" [ngValue]="value">{{value}}</option>
+        </select>
+                </div>
+
+                <div [hidden]="!showLogic3">
+                    <div>Interlock Logic 3</div>
+                    <select [(ngModel)]="interLogic.logic3" class="form-control">
+          <option *ngFor="let value of logics" [ngValue]="value">{{value}}</option>
+        </select>
+                </div>
+
+                <span class="material-icons" style="padding-left: 26px;" (click)="addLogic()">
+        add_circle
+      </span>
+            </div>
+        </div>
+
+        <div class="arrow"></div>
+        <div class="arrowIcon"></div>
+    </div>
+
+    <div class="flex margin-top">
+        <div class="rectangle">
+            <div class="addEffect addEffect-style">
+                <div class="form-group">
+
+                    <select [(ngModel)]="tripPointLogicObj.effectName" class="form-control" #tripPoint (change)='getTripPointChange(tripPoint.value)'>
+          <option *ngFor="let value of effectNames" [ngValue]="value">{{value}}</option>
+        </select>
+
+
+                    <input type="text" [(ngModel)]="tripPointLogicObj.effectDescription" placeholder="Description" />
+                    <select [(ngModel)]="tripPointLogicObj.effectType">
+          <option *ngFor="let value of TripEffectTypes" [ngValue]="value">{{value}}</option>
+        </select>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

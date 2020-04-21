@@ -13,6 +13,8 @@ export class ColumnOneComponent implements OnInit {
   // childVar:string="this is child var data";
 
   constructor(private sharedEventsService: SharedEventsService) { }
+
+  
   addEffectFormDetails = false;
   listOfInterLogic = [];
   addInterLogicObj = {
@@ -32,31 +34,7 @@ export class ColumnOneComponent implements OnInit {
     logic3: ''
   }
 
-  effectNames = ['Select Effect Name','AnalogIndicator', 'BinaryIndicator', 'BlockValve', 'CheckValve',
-                  'Controller', 'ControlValve', 'FlowTransmitter', 'LevelTransmitter',
-                  'LevelTransmitterBar', 'PressureTransmitter', 'Pump', 'Mixer',
-                    'TemperatureTransmitter', 'ThreewayValve'];
-
-  types = [
-    {AnalogIndicator: ['AnaView', 'AnaMon']},
-    {BinaryIndicator: ['BinView', 'BinMon']},
-    {BlockValve: ['BinVlv', 'MonBinVlv']},
-    {CheckValve: ['BinVlv', 'MonBinVlv']},
-     {Controller: ['PIDCtrl']},
-     {ControlValve: ['AnaVlv', 'MonAnaVlv']},
-     {FlowTransmitter: ['AnaView', 'AnaMon']},
-     {LevelTransmitter: ['AnaView', 'AnaMon']},
-     {LevelTransmitterBar: ['AnaView', 'AnaMon']},
-     {PressureTransmitter: ['AnaView', 'AnaMon']},
-     {Pump: ['AnaDrv', 'MonAnaDrv']},
-     {Mixer: ['BinDrv', 'MonBinDrv']},
-     {TemperatureTransmitter: ['AnaView', 'AnaMon']},
-     {ThreewayValve: ['AnaVlv', 'MonAnaVlv']}
-  ]
-
-  effectTypes = [];
-  TripEffectTypes = [];
-
+  
   ngOnInit() {
     this.subscription = this.sharedEventsService.getSaveChangesEvent()
       .subscribe(item => this.saveEffectsTrips());
@@ -74,35 +52,10 @@ export class ColumnOneComponent implements OnInit {
     this.listOfInterLogic.push(JSON.parse(JSON.stringify(this.addInterLogicObj)));
     console.log(this.listOfInterLogic)
   }
-
-  addLogic() {
-   if(!this.showLogic2) this.showLogic2 = true;
-   else this.showLogic3 = true;
-  }
-
-  
-  logics = ['AND', 'OR', 'XOR', 'NAND', 'NOT'];
-
- getEffectChange = function(value){
-    this.types.forEach(element => {
-      if(element.hasOwnProperty(value.substring(3))) {
-        this.effectTypes = element[value.substring(3)];
-      }
-    });
-    console.log(this.effectTypes);
- }
-
- editCauseAndEffect = function(interLogicObj) {
+  editCauseAndEffect = function(interLogicObj) {
   this.addInterLogicObj = interLogicObj;
  }
 
- getTripPointChange = function(value){
-  this.types.forEach(element => {
-    if(element.hasOwnProperty(value.substring(3))) {
-      this.TripEffectTypes = element[value.substring(3)];
-    }
-  });
-  console.log(this.effectTypes);
-}
+ 
 
 }

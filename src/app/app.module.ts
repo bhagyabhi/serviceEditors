@@ -12,6 +12,8 @@ import { ColumnOneComponent } from './column-one/column-one.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {CdkTreeModule} from '@angular/cdk/tree';
 import {MatTreeModule, MatIconModule, MatButtonModule} from '@angular/material';
+import { ColumnTwoComponent } from './column-two/column-two.component';
+
 
 const routes: Routes=[
   {path:"graphics",component:GraphicsEditorComponent},
@@ -26,7 +28,9 @@ const routes: Routes=[
     GraphicsEditorComponent,
     TagListComponent,
     ServiceEditorComponent,
-    ColumnOneComponent
+    ColumnOneComponent,
+    ColumnTwoComponent
+  
   ],
   imports: [
     BrowserModule,

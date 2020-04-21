@@ -1,215 +1,110 @@
-
-<div style="display: flex;">
-<div class="row" style="margin-right: 45px;">
-    <div class="flex">
-    <div class="rectangle" (click) = "addEffectFormDetails = !addEffectFormDetails">
-        <div class="addEffect">
-        <span class="material-icons" style="padding-left: 26px;">
+<div class="column-one-section">
+    <div class="row" id="first-column-wrapper">
+        <div class="flex">
+            <div class="rectangle" (click)="addEffectFormDetails = !addEffectFormDetails">
+                <div class="addEffect">
+                    <span class="material-icons" style="padding-left: 26px;">
             add
-            </span>
-        <span style="font-weight: 600;">ADD EFFECT</span></div>
-    </div>
-    <div class="arrow"></div>
-    <div class="arrowIcon"></div></div>
-
-
-    <div class="flex margin-top">
-        <div class="rectangle">
-            <div class="addEffect">
-                <span class="material-icons" style="padding-left: 26px;">
-                    add_circle
-                    </span>
-                <span style="font-weight: 600;">ADD INTERLOGIC</span></div>
+          </span>
+                    <span class="flex-text-size">ADD EFFECT</span></div>
+            </div>
+            <div class="arrow"></div>
+            <div class="arrowIcon"></div>
         </div>
-        
-        <div class="arrow"></div>
-        <div class="arrowIcon"></div></div>
+
 
         <div class="flex margin-top">
             <div class="rectangle">
                 <div class="addEffect">
-                    <span class="material-icons" style="padding-left: 23px;">
-                        add
-                        </span>
-                    <span style="font-weight: 600;">ADD CAUSE</span></div>
-            </div>
-        </div>
-</div>
-
-
-
-<div class="row" *ngIf="addEffectFormDetails" style="margin-right:45px">
-    <div class="flex">
-    <div class="rectangle">
-        <div class="addEffect" style="padding-left: 0;
-        margin-top: 0px;">
-            <div class="form-group">
-
-              <select [(ngModel)]="addInterLogicObj.effectName" class="form-control"
-              #effect
-              (change)='getEffectChange(effect.value)'>
-                <option *ngFor="let value of effectNames" [ngValue]="value">{{value}}</option>
-              </select>
-            
-              
-              <input type="text" [(ngModel)]="addInterLogicObj.effectDescription" placeholder="Description"/>
-              <select [(ngModel)]="addInterLogicObj.effectType">
-                <option *ngFor="let value of effectTypes" [ngValue]="value">{{value}}</option>
-              </select>
-              <select id="cars" [(ngModel)]="addInterLogicObj.effectResetLi">
-                
-              </select>
-            </div>    
-        </div>
-
-    </div>
-    <div class="arrow"></div>
-    <div class="arrowIcon"></div></div>
-
-
-    <div class="flex margin-top" >
-        <div class="rectangle">
-            <div class="addEffect" style="padding-left: 0px; margin-top: 0;">
-                <div>
-               <div>Interlock Logic 1</div>
-               <select [(ngModel)]="interLogic.logic1" class="form-control">
-                <option *ngFor="let value of logics" [ngValue]="value">{{value}}</option>
-              </select>
+                    <span class="material-icons material-icons-padding">
+            add_circle
+          </span>
+                    <span class="flex-text-size">ADD INTERLOGIC</span></div>
             </div>
 
-            <div [hidden]="!showLogic2">
-                <div>Interlock Logic 2</div>
-                <select [(ngModel)]="interLogic.logic2" class="form-control">
-                 <option *ngFor="let value of logics" [ngValue]="value">{{value}}</option>
-               </select>
-             </div>
-
-             <div [hidden]="!showLogic3">
-                <div>Interlock Logic 3</div>
-                <select [(ngModel)]="interLogic.logic3" class="form-control">
-                 <option *ngFor="let value of logics" [ngValue]="value">{{value}}</option>
-               </select>
-             </div>
-
-             <span class="material-icons" style="padding-left: 26px;" (click)="addLogic()">
-                add_circle
-                </span>
-            </div>
+            <div class="arrow"></div>
+            <div class="arrowIcon"></div>
         </div>
-        
-        <div class="arrow"></div>
-        <div class="arrowIcon"></div></div>
 
         <div class="flex margin-top">
             <div class="rectangle">
-                <div class="addEffect" style="padding-left: 0; margin-top: 0;">
-                    <div class="form-group">
-
-                        <select [(ngModel)]="tripPointLogicObj.effectName" class="form-control"
-                        #tripPoint
-                        (change)='getTripPointChange(tripPoint.value)'>
-                          <option *ngFor="let value of effectNames" [ngValue]="value">{{value}}</option>
-                        </select>
-                      
-                        
-                        <input type="text" [(ngModel)]="tripPointLogicObj.effectDescription" placeholder="Description"/>
-                        <select [(ngModel)]="tripPointLogicObj.effectType">
-                          <option *ngFor="let value of TripEffectTypes" [ngValue]="value">{{value}}</option>
-                        </select>
-                       
-                      </div>
-                    </div>
+                <div class="addEffect">
+                    <span class="material-icons material-icons-padding">
+            add
+          </span>
+                    <span class="flex-text-size">ADD CAUSE</span></div>
             </div>
         </div>
-</div>
-<div class="row" *ngFor="let interLogicObj of listOfInterLogic" style="margin-right: 45px;">
-    <div class="flex">
-    <div class="rectangle">
-        <div class="addEffect" style="padding-left:0; margin-top: 0;">
-            <div style="    font-size: 19px;
-            padding-left: 7px;
-            font-weight: 400;
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;"> {{interLogicObj.effectName}}
-             <span class="material-icons" style="font-size: 18px;" (click)=editCauseAndEffect(interLogicObj)>
-                edit
-                </span>
-            </div>
-             
-            <div style="    height: 14px;
-            padding-left: 7px;
-            font-size: 17px;">
-              {{interLogicObj.effectDescription}}
-            </div>
-            <div style="    margin-top: 25px;
-            height: 64px;
-            background-color: #ada3a3c4;
-            margin-left: 9px;
-            margin-right: 9px;">
-              <div style="    height: 14px;
-              padding-left: 7px;
-              font-size: 17px;">
-                {{interLogicObj.effectType}}
-              </div>
-             
-              
-             <div>{{interLogicObj.effectResetLi}}</div> 
-
-              </div>
-
-        </div>
-
     </div>
-    <div class="arrow"></div>
-    <div class="arrowIcon"></div></div>
 
 
-    <div class="flex margin-top" >
-        <div class="rectangle">
-            <div class="addEffect" style="padding-left: 0px; margin-top: 0;">
-                 <div *ngFor="let logic of interLogicObj.logics; let i = index">
-                     <div style="    margin: 7px 15px 10px 15px;">
-                     <div>Interlock Logic {{i + 1}}</div>
-                     <div style="    margin-top: 5px;
-                     background-color: #ada3a3c4;
-                     padding: 5px 0 5px 2px;
-                     font-size: larger;
-                     width: 57px;
-                     text-align: center;">{{logic}}</div>
+
+
+
+    <div class="row" *ngFor="let interLogicObj of listOfInterLogic" style="margin-right: 45px;">
+        <div class="flex">
+            <div class="rectangle">
+                <div class="addEffect addEffect-style">
+                    <div class="addEffect-Name "> {{interLogicObj.effectName}}
+                        <span class="material-icons" style="font-size: 18px;">
+              edit
+            </span>
+
+
                     </div>
-                 </div>
+
+                    <div class="addEffect-description">
+                        {{interLogicObj.effectDescription}}
+                    </div>
+                    <div class="addEffect-type-wrapper">
+                        <div class="addEffect-type">
+                            {{interLogicObj.effectType}}
+                        </div>
+
+
+                        <div>{{interLogicObj.effectResetLi}}</div>
+
+                    </div>
+
                 </div>
+
+            </div>
+            <div class="arrow"></div>
+            <div class="arrowIcon"></div>
         </div>
-        
-        <div class="arrow"></div>
-        <div class="arrowIcon"></div></div>
+
 
         <div class="flex margin-top">
             <div class="rectangle">
-                <div class="addEffect" style="margin-top: 0; padding-left: 0;">
-                   <div style="    font-size: 19px;
-                   padding-left: 7px;
-                   font-weight: 400;">
-                    {{interLogicObj.tripPointProperties.effectName}}
-                   
-                   </div> 
-                   
-                   <div style="    height: 14px;
-                   padding-left: 7px;
-                   font-size: 17px;">   {{interLogicObj.tripPointProperties.effectDescription}}</div>
-                    
-                   <div style="    margin-top: 25px;
-                   height: 64px;
-                   background-color: #ada3a3c4;
-                   margin-left: 9px;
-                   margin-right: 9px;">
-                     <div style="    height: 14px;
-                     padding-left: 7px;
-                     font-size: 17px;"> {{interLogicObj.tripPointProperties.effectType}} </div>
-                   
+                <div class="addEffect addEffect-style">
+                    <div *ngFor="let logic of interLogicObj.logics; let i = index">
+                        <div style="    margin: 7px 15px 10px 15px;">
+                            <div>Interlock Logic {{i + 1}}</div>
+                            <div class="addEffect-logic">{{logic}}</div>
+                        </div>
                     </div>
+                </div>
+            </div>
+
+            <div class="arrow"></div>
+            <div class="arrowIcon"></div>
+        </div>
+
+        <div class="flex margin-top">
+            <div class="rectangle">
+                <div class="addEffect addEffect-style">
+                    <div class="interlogic-name">
+                        {{interLogicObj.tripPointProperties.effectName}}
+
+                    </div>
+
+                    <div class="interlogic-description"> {{interLogicObj.tripPointProperties.effectDescription}}</div>
+
+                    <div class="interlogic-type-wrapper">
+                        <div class="interlogic-type-text"> {{interLogicObj.tripPointProperties.effectType}} </div>
+
+                    </div>
+                </div>
             </div>
         </div>
-</div>
-</div>
+    </div>
