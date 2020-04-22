@@ -7,14 +7,16 @@ import { SharedEventsService } from '../services/shared-events.service';
   styleUrls: ['./column-one.component.css']
 })
 export class ColumnOneComponent implements OnInit {
-  showLogic2: boolean;
-  showLogic3: boolean;
+ 
   subscription: any;
-  // childVar:string="this is child var data";
+  public show:boolean = false;
+
+  toggle() {
+    this.show = !this.show;
+  }
+ 
 
   constructor(private sharedEventsService: SharedEventsService) { }
-
-  
   addEffectFormDetails = false;
   listOfInterLogic = [];
   addInterLogicObj = {
@@ -34,7 +36,9 @@ export class ColumnOneComponent implements OnInit {
     logic3: ''
   }
 
-  
+  effectTypes = [];
+  TripEffectTypes = [];
+
   ngOnInit() {
     this.subscription = this.sharedEventsService.getSaveChangesEvent()
       .subscribe(item => this.saveEffectsTrips());
@@ -50,12 +54,18 @@ export class ColumnOneComponent implements OnInit {
     this.addInterLogicObj.id = id;
     this.addInterLogicObj.tripPointProperties = this.tripPointLogicObj;
     this.listOfInterLogic.push(JSON.parse(JSON.stringify(this.addInterLogicObj)));
-    console.log(this.listOfInterLogic)
+    console.log(this.listOfInterLogic);
+    
+
+    this.show=false;
+    
   }
-  editCauseAndEffect = function(interLogicObj) {
+
+ editCauseAndEffect = function(interLogicObj) {
   this.addInterLogicObj = interLogicObj;
  }
 
+ 
  
 
 }

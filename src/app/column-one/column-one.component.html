@@ -1,7 +1,7 @@
 <div class="column-one-section">
     <div class="row" id="first-column-wrapper">
         <div class="flex">
-            <div class="rectangle" (click)="addEffectFormDetails = !addEffectFormDetails">
+            <div class="rectangle" (click)="toggle()">
                 <div class="addEffect">
                     <span class="material-icons" style="padding-left: 26px;">
             add
@@ -37,7 +37,7 @@
         </div>
     </div>
 
-
+    <app-column-two *ngIf="show" ></app-column-two>
 
 
 

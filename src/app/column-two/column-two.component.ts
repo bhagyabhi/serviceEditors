@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { SharedEventsService } from '../services/shared-events.service';
 
 @Component({
   selector: 'app-column-two',
@@ -11,9 +12,14 @@ export class ColumnTwoComponent implements OnInit {
   showLogic3: boolean;
   subscription: any;
   // childVar:string="this is child var data";
-
-  constructor() { }
-
+  
+  @Output() childData=new EventEmitter<{}>();
+  constructor(private sharedEventsService: SharedEventsService) { }
+  
+  childSaveData(){
+    this.childData.emit(this.listOfInterLogic);
+  }
+  listOfInterLogic = [];
   addInterLogicObj = {
     effectName: 'Select Effect Name',
     effectType: '',
@@ -78,6 +84,7 @@ export class ColumnTwoComponent implements OnInit {
     console.log(this.effectTypes);
  }
 
+ 
 
  getTripPointChange = function(value){
   this.types.forEach(element => {

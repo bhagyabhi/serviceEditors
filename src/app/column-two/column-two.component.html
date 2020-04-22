@@ -4,7 +4,8 @@
             <div class="addEffect addEffect-style">
                 <div class="form-group">
 
-                    <select [(ngModel)]="addInterLogicObj.effectName" class="form-control" #effect (change)='getEffectChange(effect.value)'>
+                    <select [(ngModel)]="addInterLogicObj.effectName" class="form-control" #effect (change)='getEffectChange(effect.value)'
+                        >
           <option *ngFor="let value of effectNames" [ngValue]="value">{{value}}</option>
         </select>
 
