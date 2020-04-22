@@ -37,7 +37,7 @@
         </div>
     </div>
 
-    <app-column-two *ngIf="show" ></app-column-two>
+    <app-column-two *ngIf="show" (childData)="saveEffectsTrips($event)" ></app-column-two>
 
 
 

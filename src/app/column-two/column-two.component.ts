@@ -15,10 +15,9 @@ export class ColumnTwoComponent implements OnInit {
   
   @Output() childData=new EventEmitter<{}>();
   constructor(private sharedEventsService: SharedEventsService) { }
+
   
-  childSaveData(){
-    this.childData.emit(this.listOfInterLogic);
-  }
+ 
   listOfInterLogic = [];
   addInterLogicObj = {
     effectName: 'Select Effect Name',
@@ -63,10 +62,13 @@ export class ColumnTwoComponent implements OnInit {
   TripEffectTypes = [];
 
   ngOnInit() {
-    
+    this.subscription = this.sharedEventsService.getSaveChangesEvent()
+      .subscribe(item => this.childData.emit({ id: this.addInterLogicObj.id,
+                      name: this.addInterLogicObj.effectName,
+                      type:this.addInterLogicObj.effectType,
+                    logic:this.addInterLogicObj.effectType}));
   }
   
-
   addLogic() {
    if(!this.showLogic2) this.showLogic2 = true;
    else this.showLogic3 = true;

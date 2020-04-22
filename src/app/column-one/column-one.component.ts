@@ -41,10 +41,12 @@ export class ColumnOneComponent implements OnInit {
 
   ngOnInit() {
     this.subscription = this.sharedEventsService.getSaveChangesEvent()
-      .subscribe(item => this.saveEffectsTrips());
+      .subscribe(item => this.saveEffectsTrips({}));
   }
-  saveEffectsTrips(){
-    var logics = []
+  saveEffectsTrips(data){
+    var logics = [];
+    
+
     for(var key in this.interLogic) {
       if(this.interLogic[key] != '')
       logics.push(this.interLogic[key]);
@@ -56,6 +58,7 @@ export class ColumnOneComponent implements OnInit {
     this.listOfInterLogic.push(JSON.parse(JSON.stringify(this.addInterLogicObj)));
     console.log(this.listOfInterLogic);
     
+    console.log(data);
 
     this.show=false;
     
